@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rio - Your Habits</title>
+    <link rel="stylesheet" href="styles/habit.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="logo-container">
+                <img src="images/Rio.png" alt="Rio mascot" class="mascot-logo">
+                <h2>Rio!</h2>
+            </div>
+            <ul class="nav-links">
+                <li class="nav-item"><a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li class="nav-item active"><a href="habits.html"><i class="fas fa-tasks"></i> Habits</a></li>
+                <li class="nav-item"><a href="achievements.html"><i class="fas fa-trophy"></i> Achievements</a></li>
+                <li class="nav-item"><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+            </ul>
+            <div class="user-profile">
+                <img src="/api/placeholder/40/40" alt="User avatar" class="avatar">
+                <span id="username-display"></span>
+
+                <div class="level-badge">Level 7</div>
+            </div>
+            <!-- Logout Option -->
+            <div class="logout-container">
+                <a href="login.html" class="logout-button"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content habits-content">
+            <!-- Habits Header -->
+            <section class="welcome-banner habits-header">
+                <div class="mascot-container">
+                    <img src="images/Rio.png" alt="Rio mascot" class="mascot-image">
+                </div>
+                <div class="welcome-message">
+                    <h1>Your Habit Journey</h1>
+                    <p>Track, build, and master your daily habits!</p>
+                    <div class="habit-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">12</span>
+                            <span class="stat-label">Active Habits</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">8</span>
+                            <span class="stat-label">Completed Today</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Habit Categories and Filters -->
+            <section class="dashboard-section habit-filters">
+                <div class="section-header">
+                    <h2>Your Habits</h2>
+                    <button id="addHabitBtn" class="add-habit-btn"><i class="fas fa-plus"></i> Add Habit</button>
+                </div>
+                <div class="category-tabs">
+                    <button class="category-btn active" data-category="All">All Habits</button>
+                    <button class="category-btn" data-category="fitness">Fitness</button>
+                    <button class="category-btn" data-category="mindfulness">Mindfulness</button>
+                    <button class="category-btn" data-category="learning">Learning</button>
+                </div>
+            </section>
+
+            <!-- Habit Lists -->
+            <section class="dashboard-section habit-lists">
+                    <div class="habit-grid"></div>   
+            </section>
+            
+            <!-- Monthly Habit View -->
+            <section class="dashboard-section habit-calendar">
+                <div class="section-header">
+                  <h2>Monthly Habit View</h2>
+                  <div class="calendar-controls">
+                    <button class="prev-month"><i class="fas fa-chevron-left"></i></button>
+                    <span class="current-month">March 2025</span>
+                    <button class="next-month"><i class="fas fa-chevron-right"></i></button>
+                  </div>
+                </div>
+                <div class="calendar-container">
+                  <div class="calendar-header">
+                    <div class="calendar-cell">Sun</div>
+                    <div class="calendar-cell">Mon</div>
+                    <div class="calendar-cell">Tue</div>
+                    <div class="calendar-cell">Wed</div>
+                    <div class="calendar-cell">Thu</div>
+                    <div class="calendar-cell">Fri</div>
+                    <div class="calendar-cell">Sat</div>
+                  </div>
+                  <div class="calendar-body">
+                    <!-- Calendar days will be populated by JS -->
+                  </div>
+                </div>
+                <div class="habit-legend">
+                  <div class="legend-item">
+                    <div class="legend-color" style="background-color: #27ae60;"></div>
+                    <span>Completed</span>
+                  </div>
+                  <div class="legend-item">
+                    <div class="legend-color" style="background-color: #e74c3c;"></div>
+                    <span>Missed</span>
+                  </div>
+                  <div class="legend-item">
+                    <div class="legend-color" style="background-color: #f1c40f;"></div>
+                    <span>Partial</span>
+                  </div>
+                </div>
+            </section>
+            
+            <!-- Habit Insights -->
+            <div class="two-column-section">
+                <section class="dashboard-section stats-section habit-insights">
+                    <div class="section-header">
+                        <h2>Habit Insights</h2>
+                    </div>
+                    <div class="stats-container">
+                        <div class="stat-item">
+                            <div class="stat-icon">
+                                <i class="fas fa-fire"></i>
+                            </div>
+                            <div class="stat-details">
+                                <h3>Longest Streak</h3>
+                                <p class="stat-value">15 days</p>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="stat-details">
+                                <h3>Completion Rate</h3>
+                                <p class="stat-value">78%</p>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <div class="stat-details">
+                                <h3>Habits Mastered</h3>
+                                <p class="stat-value">4</p>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                            <div class="stat-details">
+                                <h3>Best Week</h3>
+                                <p class="stat-value">Feb 10-16</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="dashboard-section achievements-section recent-habit-achievements">
+                    <div class="section-header">
+                        <h2>Recent Habit Milestones</h2>
+                        <a href="#" class="view-all">View All</a>
+                    </div>
+                    <div class="achievements-container">
+                        <div class="achievement-item">
+                            <div class="achievement-icon gold">
+                                <i class="fas fa-medal"></i>
+                            </div>
+                            <div class="achievement-details">
+                                <h3>Consistency Champion</h3>
+                                <p>7-day streak on morning workout</p>
+                            </div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-icon silver">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <div class="achievement-details">
+                                <h3>Reading Rockstar</h3>
+                                <p>Completed 20 reading sessions</p>
+                            </div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-icon bronze">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div class="achievement-details">
+                                <h3>Mindfulness Master</h3>
+                                <p>30 consecutive days of meditation</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+  <!-- Modal (Hidden by default) -->
+  <div class="modal" id="add-habit-modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <h2>Create New Habit</h2>
+      <form id="habitForm">
+        <div class="form-group">
+          <label for="habitName">Habit Name</label>
+          <input type="text" id="habitName" required placeholder="E.g., Morning Workout">
+        </div>
+  
+        <div class="form-group">
+          <label for="habitDescription">Description</label>
+          <input type="text" id="habitDescription" placeholder="E.g., 30 minutes of cardio">
+        </div>
+  
+        <div class="form-group">
+          <label for="habitCategory">Category</label>
+          <select id="habitCategory" required>
+            <option value="">Select category</option>
+            <option value="fitness">Fitness</option>
+            <option value="mindfulness">Mindfulness</option>
+            <option value="learning">Learning</option>
+            <option value="productivity">Productivity</option>
+            <option value="custom">Custom</option>
+          </select>
+        </div>
+  
+        <div class="form-group">
+          <label for="habit-icon">Icon</label>
+          <div class="icon-selection">
+            <button type="button" class="icon-option" data-icon="fa-running"><i class="fas fa-running"></i></button>
+            <button type="button" class="icon-option" data-icon="fa-book"><i class="fas fa-book"></i></button>
+            <button type="button" class="icon-option" data-icon="fa-medkit"><i class="fas fa-medkit"></i></button>
+            <button type="button" class="icon-option" data-icon="fa-brain"><i class="fas fa-brain"></i></button>
+            <button type="button" class="icon-option" data-icon="fa-laptop-code"><i class="fas fa-laptop-code"></i></button>
+            <button type="button" class="icon-option" data-icon="fa-dumbbell"><i class="fas fa-dumbbell"></i></button>
+            <button type="button" class="icon-option" data-icon="fa-apple-alt"><i class="fas fa-apple-alt"></i></button>
+          </div>
+          <input type="hidden" id="selected-icon" required value="fa-running">
+        </div>
+  
+        <div class="form-group">
+          <label for="habit-frequency">Frequency</label>
+          <select id="habit-frequency" required>
+            <option value="daily">Daily</option>
+            <option value="weekly">Weekly</option>
+            <option value="custom">Custom</option>
+          </select>
+        </div>
+  
+        <div class="form-actions">
+          <button type="button" class="cancel-btn">Cancel</button>
+          <button type="submit" class="save-btn">Create Habit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <script src="scripts/habit.js" defer></script>
+</body>
+</html>

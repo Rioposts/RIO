@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Rio! Your Personal Self-Development Buddy</title>
+    <link rel="stylesheet" href="styles/dashboard.css">
+    <link rel="stylesheet" href="styles/profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <div class="logo-circle">
+                <img src="images/Rio.png" alt="Rio logo" class="rio-logo">
+            </div>
+            Rio!
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="#" class="active">Profile</a></li>
+            <li><a href="#" onclick="logout()">Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- Profile Section -->
+    <div class="profile-container">
+        <div class="profile-header">
+            <div class="profile-picture">
+                <div class="avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="change-photo">
+                    <i class="fas fa-camera"></i>
+                </div>
+            </div>
+            <div class="user-info">
+                <h1 id="profile-username">Fawaz</h1>
+                <p class="user-since">Member since <span id="join-date">February 2025</span></p>
+            </div>
+        </div>
+        
+        <div class="profile-stats">
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fas fa-fire"></i></div>
+                <div class="stat-value" id="streak-count">7</div>
+                <div class="stat-label">Day Streak</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fas fa-check-circle"></i></div>
+                <div class="stat-value" id="tasks-completed">42</div>
+                <div class="stat-label">Tasks Completed</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fas fa-trophy"></i></div>
+                <div class="stat-value" id="points-earned">580</div>
+                <div class="stat-label">Points Earned</div>
+            </div>
+        </div>
+        
+        <div class="profile-sections">
+            <div class="section-card">
+                <div class="section-header">
+                    <h3><i class="fas fa-user-edit"></i> Personal Information</h3>
+                    <button class="edit-button" id="edit-personal-info">Edit</button>
+                </div>
+                <div class="section-content">
+                    <form id="personal-info-form">
+                        <div class="form-group">
+                            <label for="full-name">Full Name</label>
+                            <input type="text" id="full-name" value="Fawaz Ahmed" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" value="fawaz@example.com" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="birthday">Birthday</label>
+                            <input type="date" id="birthday" value="1995-05-15" disabled>
+                        </div>
+                        <div class="form-buttons hidden">
+                            <button type="button" id="cancel-personal-info">Cancel</button>
+                            <button type="submit" id="save-personal-info">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="section-card">
+                <div class="section-header">
+                    <h3><i class="fas fa-bullseye"></i> Goals</h3>
+                    <button class="edit-button" id="edit-goals">Edit</button>
+                </div>
+                <div class="section-content">
+                    <div id="goals-container">
+                        <div class="goal-item">
+                            <div class="goal-info">
+                                <div class="goal-title">Meditate Daily</div>
+                                <div class="goal-progress">
+                                    <div class="goal-progress-bar">
+                                        <div class="goal-progress-fill" style="width: 70%;"></div>
+                                    </div>
+                                    <span>70%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="goal-item">
+                            <div class="goal-info">
+                                <div class="goal-title">Exercise 3x per week</div>
+                                <div class="goal-progress">
+                                    <div class="goal-progress-bar">
+                                        <div class="goal-progress-fill" style="width: 50%;"></div>
+                                    </div>
+                                    <span>50%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="goal-item">
+                            <div class="goal-info">
+                                <div class="goal-title">Read for 30 minutes daily</div>
+                                <div class="goal-progress">
+                                    <div class="goal-progress-bar">
+                                        <div class="goal-progress-fill" style="width: 25%;"></div>
+                                    </div>
+                                    <span>25%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="goals-form" class="hidden">
+                        <div class="form-group">
+                            <label for="new-goal">Add New Goal</label>
+                            <input type="text" id="new-goal" placeholder="Enter a new goal">
+                            <button type="button" id="add-goal">Add</button>
+                        </div>
+                        <div class="form-buttons">
+                            <button type="button" id="cancel-goals">Cancel</button>
+                            <button type="button" id="save-goals">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section-card">
+                <div class="section-header">
+                    <h3><i class="fas fa-cog"></i> Preferences</h3>
+                    <button class="edit-button" id="edit-preferences">Edit</button>
+                </div>
+                <div class="section-content">
+                    <form id="preferences-form">
+                        <div class="form-group">
+                            <label for="notifications">Notifications</label>
+                            <div class="toggle-switch">
+                                <input type="checkbox" id="notifications" checked disabled>
+                                <label for="notifications" class="toggle-label"></label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="theme">Theme</label>
+                            <select id="theme" disabled>
+                                <option value="light">Light</option>
+                                <option value="dark">Dark</option>
+                                <option value="system">System Default</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="reminder-time">Daily Reminder Time</label>
+                            <input type="time" id="reminder-time" value="08:00" disabled>
+                        </div>
+                        <div class="form-buttons hidden">
+                            <button type="button" id="cancel-preferences">Cancel</button>
+                            <button type="submit" id="save-preferences">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div class="rio-motivation">
+            <div class="rio-small">
+                <img src="images/Rio.png" alt="Rio small" class="rio-small-image">
+            </div>
+            <div class="motivation-message">
+                "Your profile looks great! Keep tracking your progress and you'll be amazed at how far you'll go!"
+            </div>
+        </div>
+    </div>
+    
+    <div class="bottom-nav">
+        <div class="nav-item">
+            <div class="nav-icon"><i class="fas fa-home"></i></div>
+            <div class="nav-label">Home</div>
+        </div>
+        <div class="nav-item">
+            <div class="nav-icon"><i class="fas fa-chart-line"></i></div>
+            <div class="nav-label">Progress</div>
+        </div>
+        <div class="nav-item">
+            <div class="nav-icon"><i class="fas fa-book"></i></div>
+            <div class="nav-label">Journal</div>
+        </div>
+        <div class="nav-item active">
+            <div class="nav-icon"><i class="fas fa-user"></i></div>
+            <div class="nav-label">Profile</div>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script src="scripts/profile.js"></script>
+</body>
+</html>

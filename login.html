@@ -1,0 +1,52 @@
+<!-- login.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rio! - Welcome Back</title>
+    <link rel="stylesheet" href="styles/login.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="form-section">
+            <div class="welcome-back">
+                <h1>Welcome Back!</h1>
+                <p>Rio missed you! Ready to continue your journey?</p>
+            </div>
+
+            <form id="login-form" class="login-form">
+                <div class="input-field">
+                    <input type="email" id="email" name="email" required>
+                    <label>Email</label>
+                    <span class="focus-border"></span>
+                </div>
+
+                <div class="input-field">
+                    <input type="password" id="password" name="password" required>
+                    <label>Password</label>
+                    <span class="focus-border"></span>
+                </div>
+
+                <!-- 🔥 Fixed: Added id="login-btn" -->
+                <button type="submit" id="login-btn" class="login-button">Let's Continue!</button>
+            </form>
+
+            <div class="create-account">
+                <p>New to Rio? <a href="signup.html">Create an account</a></p>
+            </div>
+        </div>
+
+        <div class="rio-section">
+          <div class="rio-floating">
+              <img src="images/Rio.png" alt="Rio Character" class="rio-image">
+              <div class="thought-bubble">
+                  "Great to see you again! Ready for another awesome day? 🌟"
+              </div>
+          </div>
+      </div>
+    </div>
+
+    <script src="login.js" defer></script>
+</body>
+</html>

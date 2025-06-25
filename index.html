@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rio: your personal self-growth buddy</title>
+    <link rel="manifest" href="manifest.json">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles/home.css">
+    <link rel="icon" href="images/Rio.png">
+</head>
+<body class="site-body">
+    <header class="main-header">
+        <nav class="nav-container">
+            <div class="logo-section">
+                <a href="index.html">
+                    <img src="images/Rio.png" alt="Rio" class="logo">
+                </a>
+            </div>
+            
+            <div class="main-nav">
+                <a href="index.html" class="nav-item">Rio</a>
+                <a href="healthy.html" class="nav-item">Healthy Eating</a>
+                <a href="sleep-better.html" class="nav-item">Sleep better</a>
+                <a href="ease-stress.html" class="nav-item">Ease Stress</a>
+            </div>
+
+            <div class="right-nav">
+                <a href="login.html" class="nav-item">Login</a>
+                <a href="signup.html" class="nav-button">Sign up</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="hero-wrapper">
+        <div class="hero">
+            <h1>Make Changes That Last</h1>
+            <p>Transform your life with science-backed strategies for building better habits and achieving your goals. Ready to begin your journey to positive change?</p>
+            <a href="signup.html" class="button">Start your journey</a>
+        </div>
+    </div>
+    <div class="waves"></div>
+    <div class="illustration"></div>
+
+    <main class="features">
+        <!-- First Feature Section -->
+        <section class="feature-section">
+            <div class="feature-content">
+                <div class="feature-images">
+                    <img src="images/adhd.webp" alt="ADHD coaching app interface preview" class="feature-img">
+                </div>
+                <div class="feature-text">
+                    <h2>Coaching library on ADHD-related topics</h2>
+                    <p>Get a boost in 2 minutes. On-demand series available all day, all night.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Second Feature Section -->
+        <section class="feature-section">
+            <div class="feature-content reverse">
+                <div class="feature-text">
+                    <h2>Focus on deep work</h2>
+                    <p>Learn how to tune out noise. Streamline your mind into a flow state.</p>
+                </div>
+                <div class="feature-images">
+                    <img src="images/mobile.webp" alt="Deep work focus app interface" class="phone-img">
+                </div>
+            </div>
+        </section>
+
+        <!-- Third Feature Section -->
+        <section class="feature-section">
+            <div class="feature-content">
+                <div class="feature-text">
+                    <h2>Meet Rio!</h2>
+                    <p>A cute little companion that will guide you in your journey!</p>
+                </div>
+                <div class="feature-images">
+                    <img class="phone-img" src="images/Rio.png" alt="Morning Routine">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section class="pre-footer">
+        <div class="pre-footer-container">
+            <div class="pre-footer-text">
+                <h2>Take the First Step Toward a Better You</h2>
+                <p>Your journey to self-improvement starts now. Build habits, achieve goals, and unlock your potential.</p>
+                <a href="signup.html" class="pre-footer-btn">Join Now</a>
+            </div>
+            <div class="pre-footer-image">
+                <img src="images/prefooter image.png" alt="Self Growth" />
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="images/Rio.png" alt="Rio Logo">
+                <p>Rio: Your Personal Self-Growth Buddy</p>
+            </div>
+    
+            <div class="footer-links">
+                <a href="about.html">About</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+    
+            <div class="footer-social">
+                 <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a><a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+               
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        if ("serviceWorker" in navigator) {
+          navigator.serviceWorker.register("service-worker.js")
+            .then(reg => console.log("✅ Service Worker Registered"))
+            .catch(err => console.error("❌ Service Worker registration failed:", err));
+        }
+      </script>
+      
+</body>
+</html>

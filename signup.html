@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rio! - Start Your Journey</title>
+    <link rel="stylesheet" href="styles/signup.css">
+</head>
+<body>
+    <div class="signup-container">
+        <!-- Rio Section -->
+        <div class="rio-section">
+            <img src="images/Rio.png" alt="Rio Character" class="rio-image">
+            <div class="rio-messages">
+                <div class="message active">"Ready to transform your life? Let's begin this amazing journey! 🌟"</div>
+                <div class="message">"Every great story has a beginning. This is yours! 🚀"</div>
+                <div class="message">"Together, we'll turn your dreams into reality! 🌈"</div>
+            </div>
+        </div>
+
+        <!-- Signup Form Section -->
+        <div class="form-section">
+            <div class="form-header">
+                <h1>Join Rio!</h1>
+                <p>Your personal growth adventure starts here</p>
+            </div>
+
+            <form id="signup-form">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                    <span class="password-hint">Must be at least 8 characters</span>
+                </div>
+
+               
+
+                <button type="submit" class="signup-button">Begin Your Journey</button>
+            </form>
+
+            <div class="form-footer">
+                <p>Already have an account? <a href="login.html">Log in here</a></p>
+            </div>
+        </div>
+    </div>
+    <script src="signup.js" defer></script>
+</body>
+</html>

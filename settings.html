@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rio - Settings</title>
+    <link rel="stylesheet" href="styles/settings.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="logo-container">
+                <img src="images/Rio.png" alt="Rio mascot" class="mascot-logo">
+                <h2>Rio!</h2>
+            </div>
+            <ul class="nav-links">
+                <li class="nav-item"><a href="dashboard.html"><i class="fas fa-home"></i> <span>Dashboard</span></a></li>
+                <li class="nav-item"><a href="habits.html"><i class="fas fa-tasks"></i> <span>Habits</span></a></li>
+                <li class="nav-item"><a href="achievements.html"><i class="fas fa-trophy"></i> <span>Achievements</span></a></li>
+                <li class="nav-item active"><a href="settings.html"><i class="fas fa-cog"></i> <span>Settings</span></a></li>
+            </ul>
+            <div class="user-profile">
+                <img src="images/chef_rio-removebg-preview.png" alt="User avatar" class="avatar">
+                <span id="username-display"></span>
+                <script>
+                  document.addEventListener("DOMContentLoaded", () => {
+                    const display = document.getElementById("username-display");
+                    display.textContent = localStorage.getItem("username") || "Guest";
+                  });
+                </script>
+                
+                <div class="level-badge" id="level-badge">Level 1</div>
+
+            </div>
+            <div class="logout-container">
+                <a href="login.html" class="logout-button"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a>
+            </div>
+        </nav>
+
+        <!-- Main content -->
+        <main class="main-content">
+            <!-- Settings Banner -->
+            <section class="settings-banner">
+                <div class="banner-content">
+                    <div class="mascot-container">
+                        <img src="images/Rio.png" alt="Rio mascot" class="mascot-image">
+                    </div>
+                    <div class="banner-text">
+                        <h1>Settings</h1>
+                        <p>Customize your Rio experience</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Settings Sections -->
+            <div class="settings-container">
+                <!-- Settings Navigation -->
+                <div class="settings-nav">
+                    <button class="setting-nav-btn active" data-target="appearance">
+                        <i class="fas fa-palette"></i> Appearance
+                    </button>
+                    <button class="setting-nav-btn" data-target="profile">
+                        <i class="fas fa-user"></i> Profile
+                    </button>
+                    <button class="setting-nav-btn" data-target="notifications">
+                        <i class="fas fa-bell"></i> Notifications
+                    </button>
+                    <button class="setting-nav-btn" data-target="privacy">
+                        <i class="fas fa-shield-alt"></i> Privacy
+                    </button>
+                </div>
+
+                <!-- Settings Content -->
+                <div class="settings-content">
+                    <!-- Appearance Settings -->
+                    <div class="settings-section active" id="appearance-settings">
+                        <h2>Appearance Settings</h2>
+                        <div class="setting-card">
+                            <div class="setting-info">
+                                <h3>Theme</h3>
+                                <p>Choose between light and dark mode</p>
+                            </div>
+                            <div class="setting-control">
+                                <button id="theme-light" class="theme-btn active">
+                                    <i class="fas fa-sun"></i> Light
+                                </button>
+                                <button id="theme-dark" class="theme-btn">
+                                    <i class="fas fa-moon"></i> Dark
+                                </button>
+                                <button id="theme-system" class="theme-btn">
+                                    <i class="fas fa-laptop"></i> System
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="setting-card">
+                            <div class="setting-info">
+                                <h3>Accent Color</h3>
+                                <p>Choose your preferred accent color</p>
+                            </div>
+                            <div class="setting-control accent-colors">
+                                <button class="color-btn active" data-color="purple" style="background-color: #6c5ce7;"></button>
+                                <button class="color-btn" data-color="blue" style="background-color: #0984e3;"></button>
+                                <button class="color-btn" data-color="green" style="background-color: #00b894;"></button>
+                                <button class="color-btn" data-color="orange" style="background-color: #e17055;"></button>
+                                <button class="color-btn" data-color="pink" style="background-color: #fd79a8;"></button>
+                            </div>
+                        </div>
+
+                        <div class="setting-card">
+                            <div class="setting-info">
+                                <h3>Animation Effects</h3>
+                                <p>Enable or disable animations throughout the app</p>
+                            </div>
+                            <div class="setting-control">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="animation-toggle" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Profile Settings -->
+                    <div class="settings-section" id="profile-settings">
+                        <h2>Profile Settings</h2>
+                        <div class="setting-card">
+                            <div class="setting-info">
+                                <h3>Personal Information</h3>
+                                <p>Update your profile details</p>
+                            </div>
+                            <div class="setting-control">
+                                <form id="profile-form">
+                                    <div class="form-group">
+                                        <label for="display-name">Display Name</label>
+                                        <input type="text" id="display-name" value="Alex" class="form-input">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input type="email" id="email" value="alex@example.com" class="form-input">
+                                    </div>
+                                    <div class="form-actions">
+                                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="setting-card">
+                            <div class="setting-info">
+                                <h3>Avatar</h3>
+                                <p>Update your profile picture</p>
+                            </div>
+                            <div class="setting-control avatar-section">
+                                <div class="current-avatar">
+                                    <img src="/api/placeholder/100/100" alt="Current avatar" class="avatar-preview">
+                                </div>
+                                <div class="avatar-actions">
+                                    <button class="btn btn-outline">Upload New Image</button>
+                                    <button class="btn btn-text">Remove</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="setting-card">
+                            <div class="setting-info">
+                                <h3>Password</h3>
+                                <p>Change your password</p>
+                            </div>
+                            <div class="setting-control">
+                                <form id="password-form">
+                                    <div class="form-group">
+                                        <label for="current-password">Current Password</label>
+                                        <input type="password" id="current-password" class="form-input">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="new-password">New Password</label>
+                                        <input type="password" id="new-password" class="form-input">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="confirm-password">Confirm New Password</label>
+                                        <input type="password" id="confirm-password" class="form-input">
+                                    </div>
+                                    <div class="form-actions">
+                                        <button type="submit" class="btn btn-primary">Update Password</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Notification Settings -->
+                    <div class="settings-section" id="notifications-settings">
+                        <h2>Notification Settings</h2>
+                        <div class="setting-card">
+                            <div class="setting-info">
+                                <h3>Push Notifications</h3>
+                                <p>Control when you receive notifications</p>
+                            </div>
+                            <div class="setting-control">
+                                <div class="notification-option">
+                                    <div class="option-info">
+                                        <h4>Habit Reminders</h4>
+                                        <p>Get reminded of your daily habits</p>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="habit-notification" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                                <div class="notification-option">
+                                    <div class="option-info">
+                                        <h4>Achievement Unlocked</h4>
+                                        <p>Get notified when you unlock an achievement</p>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="achievement-notification" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                                <div class="notification-option">
+                                    <div class="option-info">
+                                        <h4>Weekly Summary</h4>
+                                        <p>Receive a weekly progress report</p>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="weekly-notification">
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="setting-card">
+                            <div class="setting-info">
+                                <h3>Email Notifications</h3>
+                                <p>Control what emails you receive</p>
+                            </div>
+                            <div class="setting-control">
+                                <div class="notification-option">
+                                    <div class="option-info">
+                                        <h4>Weekly Digest</h4>
+                                        <p>Receive a summary of your weekly progress</p>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="weekly-email" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                                <div class="notification-option">
+                                    <div class="option-info">
+                                        <h4>Tips & Advice</h4>
+                                        <p>Get personalized tips based on your habits</p>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="tips-email">
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Privacy Settings -->
+                    <div class="settings-section" id="privacy-settings">
+                        <h2>Privacy Settings</h2>
+                        <div class="setting-card">
+                            <div class="setting-info">
+                                <h3>Data Collection</h3>
+                                <p>Control how we use your data to improve Rio</p>
+                            </div>
+                            <div class="setting-control">
+                                <div class="notification-option">
+                                    <div class="option-info">
+                                        <h4>Usage Analytics</h4>
+                                        <p>Allow us to collect anonymous usage data</p>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="analytics-toggle" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                                <div class="notification-option">
+                                    <div class="option-info">
+                                        <h4>Personalization</h4>
+                                        <p>Allow Rio to personalize your experience</p>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="personalization-toggle" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="setting-card">
+                            <div class="setting-info">
+                                <h3>Account Data</h3>
+                                <p>Manage your account data</p>
+                            </div>
+                            <div class="setting-control data-actions">
+                                <button class="btn btn-outline">Download My Data</button>
+                                <button class="btn btn-danger">Delete Account</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Success Notification -->
+    <div id="success-notification" class="notification">
+        <i class="fas fa-check-circle"></i>
+        <span id="notification-message">Settings saved successfully!</span>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const levelBadge = document.getElementById("level-badge");
+        const storedLevel = localStorage.getItem("level") || 1;
+        if (levelBadge) {
+          levelBadge.textContent = `Level ${storedLevel}`;
+        }
+    
+        const usernameDisplay = document.getElementById("username-display");
+        const storedUsername = localStorage.getItem("username") || "Guest";
+        if (usernameDisplay) {
+          usernameDisplay.textContent = storedUsername;
+        }
+      });
+    </script>
+    
+    <script src="scripts/settings.js"></script>
+</body>
+</html>

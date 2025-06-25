@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rio - Your Personal Growth Journey</title>
+    <link rel="stylesheet" href="styles/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="logo-container">
+                <img src="images/Rio.png" alt="Rio mascot" class="mascot-logo">
+                <h2>Rio!</h2>
+            </div>
+            <ul class="nav-links">
+                <li class="nav-item active"><a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li class="nav-item"><a href="habits.html"><i class="fas fa-tasks"></i> Habits</a></li>
+                <li class="nav-item"><a href="achievements.html"><i class="fas fa-trophy"></i> Achievements</a></li>
+                <li class="nav-item"><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+            </ul>
+            <div class="user-profile">
+                <img src="images/chef_rio-removebg-preview.png" alt="User avatar" class="avatar">
+                <p id="sidebar-username">Username</p>
+                <span class="level-badge" id="sidebar-level">Level 1</span>
+              </div>
+            <!-- Logout Option -->
+            <div class="logout-container">
+                <a href="login.html" class="logout-button"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Welcome Banner with Rio -->
+            <section class="welcome-banner">
+                <div class="mascot-container">
+                    <img src="images/Rio.png" alt="Rio mascot" class="mascot-image">
+                </div>
+                <div class="welcome-message">
+                  <h1 class="welcome-heading">Welcome back, <span id="user-name">Username</span>!</h1>
+                 <p>You're on a <span id="user-streak">0</span>-day streak! Keep it up to earn bonus points!</p>
+                    <p class="user-level">Level <span id="user-level">1</span></p>
+
+                    <div class="streak-container">
+                        <div class="streak-icon">
+                            <i class="fas fa-fire"></i>
+                            <span id="streak-count">0</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Daily Goals Section -->
+            <section class="dashboard-section">
+                <div class="section-header">
+                    <h2>Today's Goals</h2>
+                    <span class="points-indicator">Possible Points: 120</span>
+                </div>
+                <div class="goal-cards">
+                    <div class="goal-card completed">
+                        <div class="goal-icon">
+                            <i class="fas fa-running"></i>
+                        </div>
+                        <div class="goal-details">
+                            <h3>Morning Exercise</h3>
+                            <p>30 minutes of cardio</p>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 100%;"></div>
+                            </div>
+                        </div>
+                        <div class="goal-points">
+                            <span>+30</span>
+                        </div>
+                    </div>
+                    <div class="goal-card in-progress">
+                        <div class="goal-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="goal-details">
+                            <h3>Reading</h3>
+                            <p>Read for 20 minutes</p>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 50%;"></div>
+                            </div>
+                        </div>
+                        <div class="goal-points">
+                            <span>+40</span>
+                        </div>
+                    </div>
+                    <div class="goal-card">
+                        <div class="goal-icon">
+                            <i class="fas fa-meditation"></i>
+                        </div>
+                        <div class="goal-details">
+                            <h3>Meditation</h3>
+                            <p>10 minutes of mindfulness</p>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 0%;"></div>
+                            </div>
+                        </div>
+                        <div class="goal-points">
+                            <span>+25</span>
+                        </div>
+                    </div>
+                    <div class="goal-card">
+                        <div class="goal-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="goal-details">
+                            <h3>Learning</h3>
+                            <p>Complete 1 learning module</p>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 0%;"></div>
+                            </div>
+                        </div>
+                        <div class="goal-points">
+                            <span>+25</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Stats & Achievements -->
+            <div class="two-column-section">
+                <section class="dashboard-section stats-section">
+                    <div class="section-header">
+                        <h2>Your Stats</h2>
+                    </div>
+                    <div class="stats-container">
+                        <div class="stat-item">
+                            <div class="stat-icon">
+                                <i class="fas fa-fire"></i>
+                            </div>
+                            <div class="stat-details">
+                                <h3>Current Streak</h3>
+                                <p class="stat-value">5 days</p>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <div class="stat-details">
+                                <h3>Total Points</h3>
+                                <p class="stat-value">1,280</p>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="stat-details">
+                                <h3>Completed Goals</h3>
+                                <p class="stat-value">47</p>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                            <div class="stat-details">
+                                <h3>Best Week</h3>
+                                <p class="stat-value">Feb 10-16</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="dashboard-section achievements-section">
+                    <div class="section-header">
+                        <h2>Recent Achievements</h2>
+                        <a href="#" class="view-all">View All</a>
+                    </div>
+                    <div class="achievements-container">
+                        <div class="achievement-item">
+                            <div class="achievement-icon gold">
+                                <i class="fas fa-medal"></i>
+                            </div>
+                            <div class="achievement-details">
+                                <h3>Early Bird</h3>
+                                <p>Completed morning routine 7 days in a row</p>
+                            </div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-icon silver">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <div class="achievement-details">
+                                <h3>Bookworm</h3>
+                                <p>Read for 30+ minutes for 5 consecutive days</p>
+                            </div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-icon bronze">
+                                <i class="fas fa-dumbbell"></i>
+                            </div>
+                            <div class="achievement-details">
+                                <h3>Fitness Enthusiast</h3>
+                                <p>Completed 10 workout sessions</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Upcoming Goals -->
+            <section class="dashboard-section">
+                <div class="section-header">
+                    <h2>Coming Up Next</h2>
+                </div>
+                <div class="upcoming-goals">
+                    <div class="upcoming-goal">
+                        <div class="upcoming-day">Tomorrow</div>
+                        <div class="upcoming-details">
+                            <h3>Workout Challenge</h3>
+                            <p>50 pushups, 50 squats, 5-minute plank</p>
+                            <div class="badge">Hard</div>
+                            <div class="badge">+50 points</div>
+                        </div>
+                        <div class="upcoming-mascot">
+                            <img src="/api/placeholder/60/60" alt="Rio encouragement" class="mini-mascot">
+                        </div>
+                    </div>
+                    <div class="upcoming-goal">
+                        <div class="upcoming-day">Saturday</div>
+                        <div class="upcoming-details">
+                            <h3>Weekly Review</h3>
+                            <p>Reflect on your progress and plan next week</p>
+                            <div class="badge">Important</div>
+                            <div class="badge">+60 points</div>
+                        </div>
+                        <div class="upcoming-mascot">
+                            <img src="/api/placeholder/60/60" alt="Rio encouragement" class="mini-mascot">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Rio's Motivational Pop-up (initially hidden, will be shown via JS) -->
+        <div class="rio-popup" id="rioPopup" style="display: none;">
+            <div class="rio-popup-content">
+                <img src="/api/placeholder/100/100" alt="Rio" class="rio-popup-image">
+                <div class="rio-message">
+                    <h3>You're doing great!</h3>
+                    <p>Just one more habit to complete your daily goals.</p>
+                </div>
+                <button class="rio-popup-close">Got it!</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/dashboard.js"></script>
+</body>
+</html>
