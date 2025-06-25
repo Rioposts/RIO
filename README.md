@@ -26,34 +26,43 @@ RIO is a self-improvement and habit-tracking web app designed to help users achi
 
 ## 🧪 Setup Instructions
 
-1. **Clone the repository**
+1. Clone the repository**
    ```bash
    git clone https://github.com/Rioposts/RIO.git
    cd RIO
 
-2. Install Dependencies:
+---
+
+ **2. Install Dependencies**
+   ```bash
     npm install
+```
+---
 
-3. Configure the Database:
-  Make sure MySQL is installed and running.
+**3. Configure the Database**
+  - Make sure MySQL is installed and running.
 
-  Create a database (e.g. rio_db) and import the SQL file if provided.
+  - Create a database (e.g. rio_db) and import the SQL file if provided.
 
-  Update your db.js or .env file with your credentials:
+  - Update your db.js or .env file with your credentials:
 
-// Example
+ Example
+ ```bash
 const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   password: 'your_password',
   database: 'rio_db'
 });
-
+```
   
-4. Run the App:
+**4. Run the App**
+   ```bash
    node index.js
 
-5. Open your browser: 
+
+5. **Open your browser**
+   ```bash 
   Visit: http://localhost:3000
 
 📦 Folder Structure
