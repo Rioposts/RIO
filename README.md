@@ -65,18 +65,6 @@ const db = mysql.createConnection({
 ```
   Visit: http://localhost:3000
 
-📦 Folder Structure
-bash
-Copy
-Edit
-RIO/
-├── public/          # Static files (CSS, JS, images)
-├── views/           # EJS templates or frontend HTML
-├── routes/          # Express routes
-├── db/              # MySQL setup/config
-├── index.js         # Main server file
-├── package.json     
-└── README.md   
 ```
 ---
 
