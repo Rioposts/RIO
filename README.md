@@ -59,7 +59,7 @@ const db = mysql.createConnection({
 **4. Run the App**
    ```bash
    node index.js
-
+```
 
 5. **Open your browser**
 ```
@@ -77,7 +77,7 @@ RIO/
 ├── index.js         # Main server file
 ├── package.json     
 └── README.md   
-
+```
 ---
 
 🙌 Credits
