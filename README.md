@@ -26,7 +26,7 @@ RIO is a self-improvement and habit-tracking web app designed to help users achi
 
 ## 🧪 Setup Instructions
 
-1. Clone the repository**
+1. Clone the repository
    ```bash
    git clone https://github.com/Rioposts/RIO.git
    cd RIO
@@ -62,7 +62,7 @@ const db = mysql.createConnection({
 
 
 5. **Open your browser**
-   ```bash 
+```
   Visit: http://localhost:3000
 
 📦 Folder Structure
@@ -77,6 +77,8 @@ RIO/
 ├── index.js         # Main server file
 ├── package.json     
 └── README.md   
+
+---
 
 🙌 Credits
 Made with 💙 by Fawaz Mulla (@Rioposts)
